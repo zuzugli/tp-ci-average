@@ -15,8 +15,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Installer pytest
-        run: pip install pytest
+      - name: Installer pytest et mypy
+        run: pip install pytest mypy
+
+      - name: Vérifier le typage avec mypy
+        run: mypy .
 
       - name: Lancer les tests
         run: pytest
